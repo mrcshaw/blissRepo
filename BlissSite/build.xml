@@ -69,6 +69,7 @@
     <target name="clean">
         <delete dir="build/classes"/>
     	<delete dir="webapps/WEB-INF/classes"/>
+    	<delete dir="${tomcat.home}/webapps/${project-name}"/>
     </target>
               	
 	<target name="compile" depends="init" >

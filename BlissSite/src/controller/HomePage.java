@@ -37,6 +37,6 @@ public class HomePage extends HttpServlet {
             HttpServletResponse response)
             		throws IOException, ServletException {
     	
-    	request.getRequestDispatcher("/HomePage.jsp").forward(request, response);
+    	request.getRequestDispatcher("/jsp/HomePage.html").forward(request, response);
     }
 }
