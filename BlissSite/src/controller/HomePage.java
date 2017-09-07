@@ -1,4 +1,5 @@
 package controller;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -7,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 /**
@@ -26,6 +30,7 @@ public class HomePage extends HttpServlet {
      * @exception IOException if an input/output error occurs
      * @exception ServletException if a servlet error occurs
      */
+	@RequestMapping(value = "/jsp/homepage", method = RequestMethod.GET)
     public void doGet(HttpServletRequest request,
                       HttpServletResponse response)
       throws IOException, ServletException {
@@ -37,6 +42,12 @@ public class HomePage extends HttpServlet {
             HttpServletResponse response)
             		throws IOException, ServletException {
     	
-    	request.getRequestDispatcher("/jsp/HomePage.html").forward(request, response);
+    	request.getRequestDispatcher("/jsp/homepage.html").forward(request, response);
+    }
+    @RequestMapping(value = "/jsp/login", method = RequestMethod.GET)
+    public void login(HttpServletRequest request,
+            HttpServletResponse response)
+            		throws IOException, ServletException  {
+    	request.getRequestDispatcher("/jsp/login.html").forward(request, response);
     }
 }
